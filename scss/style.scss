@@ -1,12 +1,18 @@
 /*Colors*/
-$darkblue: #0F357E;
+$darkblue: #2B3E65;
 $lightblue: #2EA6D2;
 $lightestblue: #E5EAEE;
-$textcolor: #aaa;
+$textcolor: #7B7575;
 
 /*Fonts*/
 $font-fam: 'Nunito', sans-serif;
 $base-font-size: 14px;
+.italic {
+	font-style: italic;
+}
+.bold {
+	font-weight: 700;
+}
 
 /*Flexbox rules*/
 .flex-column {
@@ -36,6 +42,8 @@ $base-font-size: 14px;
         img {
         	width: 100%;
         	max-width: 100%;
+        	 -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+    		filter: grayscale(20%);
         }
     }
 }
@@ -52,16 +60,35 @@ $base-font-size: 14px;
 		box-shadow: 2px 2px 14px 1px rgba(51,47,51,0.68);
 		border-radius: 4px;
 		min-width: 300px;
+		background-color: #fff;
+		@media screen and (max-width: 767px) {
+			min-width: auto;
+	    }
 		figcaption {
 			padding: 0 20px;
 			.right { 
 				-ms-flex-item-align: end;
 				    align-self: flex-end;
+		        padding-left: 20px;
+    			text-align: right;
+			    @media screen and (max-width: 480px) {
+					max-width: 75px;
+			    }
 			}
 			p {
 				font-size: ($base-font-size * 1.5);
+				&:first-child {
+					margin-bottom: 0;
+				}
+				&:last-child {
+					margin-top: 5px;
+				}
 			}
 		}
+    }
+    @media screen and (max-width: 767px) {
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
     }
 }
 
@@ -88,6 +115,8 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-shadow: 2px 2px 14px 1px rgba(51, 47, 51, 0.68);
+            box-shadow: 2px 2px 14px 1px rgba(51, 47, 51, 0.68);
     .logo {
     	max-width: 32px;
     }
@@ -103,6 +132,9 @@ main {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+     @media screen and (max-width: 480px) {
+		width: 90%;
+    }
 }
 
 .blue-text {
@@ -111,12 +143,33 @@ main {
 	font-weight: 700;
 }
 
-p {
+.info-container {
+	margin: 10px;
+	text-align: center;
+	padding: 30px 20px;
+}
 
+#info-msg {
+	font-size: ($base-font-size * 1.5);
+    line-height: 1.5;
+}
+
+#price-diff {
+	color: #fff;
+	background-color: $lightblue;
+	font-size: ($base-font-size * 1.7);
+	font-weight: 700;
+	padding: 10px;
+    min-width: 175px;
+    display: inline-block;
+    border-radius: 6px;
+    letter-spacing: 1px;
 }
 
 footer {
 	background-color: $darkblue;
 	height: 40px;
 	margin-top: 0;
+    -webkit-box-shadow: 2px 2px 14px 1px rgba(51, 47, 51, 0.68);
+            box-shadow: 2px 2px 14px 1px rgba(51, 47, 51, 0.68);
 }
