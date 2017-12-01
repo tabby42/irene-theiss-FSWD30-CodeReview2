@@ -1,5 +1,16 @@
 /*Colors*/
 /*Fonts*/
+/*Flexbox rules*/
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh; }
+
 .flex-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,13 +18,7 @@
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: space-around;
-  -ms-flex-align: space-around;
-  align-items: space-around; }
+  flex-direction: row; }
   .flex-row figure {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 45%;
@@ -23,18 +28,68 @@
       width: 100%;
       max-width: 100%; }
 
+.img-container {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: space-around;
+  -ms-flex-align: space-around;
+  align-items: space-around; }
+  .img-container figure {
+    -webkit-box-shadow: 2px 2px 14px 1px rgba(51, 47, 51, 0.68);
+    box-shadow: 2px 2px 14px 1px rgba(51, 47, 51, 0.68);
+    border-radius: 4px;
+    min-width: 300px; }
+    .img-container figure figcaption {
+      padding: 0 20px; }
+      .img-container figure figcaption .right {
+        -ms-flex-item-align: end;
+        align-self: flex-end; }
+      .img-container figure figcaption p {
+        font-size: 21px; }
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+/*Layout Elements*/
 body {
-  background-color: #E5EAEE; }
+  background-color: #E5EAEE;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: #aaa; }
 
 header {
   background-color: #0F357E;
-  padding: 15px 10%; }
+  padding: 15px 10%;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
   header .logo {
     max-width: 32px; }
+  header span {
+    padding-left: 10px; }
 
 main {
   width: 80%;
   margin: 0 auto;
-  padding: 50px 0; }
+  padding: 50px 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.blue-text {
+  color: #2EA6D2;
+  font-size: 23.8px;
+  font-weight: 700; }
+
+footer {
+  background-color: #0F357E;
+  height: 40px;
+  margin-top: 0; }
 
 /*# sourceMappingURL=style.css.map */
