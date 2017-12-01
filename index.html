@@ -6,30 +6,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Price Comparison</title>
 	<link rel="stylesheet" href="css/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-	<header>
+<body class="flex-column">
+	<header class="flex-row"> 
 		<img src="img/cr2-logo.png" alt="Logo" class="logo">
 		<span>Price Comparison</span>
 	</header><!-- /header -->
 	<main >
 		<div class="img-container flex-row">
-			<figure>
+			<figure class="flex-1">
 				<img src="img/cr2-amsterdam.jpg" alt="Amsterdam">
-				<figcaption>explanatory caption</figcaption>
+				<figcaption>
+					<p class="flex-row">
+						<span class="blue-text flex-1">Amsterdam</span>
+						<span id="avg-amsterdam" class="right"></span>
+					</p>
+					<p class="flex-row">
+						<span class="flex-1">Netherlands</span>
+						<span class="right">Average Price</span>
+					</p>
+				</figcaption>
 			</figure>
-			<figure>
+			<figure class="flex-1">
 				<img src="img/cr2-london.jpg" alt="London">
-				<figcaption>explanatory caption</figcaption>
+				<figcaption>
+					<p class="flex-row"> 
+						<span class="blue-text flex-1">London</span>
+						<span id="avg-london"></span>
+					</p>
+					<p class="flex-row">
+						<span class="flex-1">United Kingdom</span>
+						<span class="right">Average Price</span>
+					</p>
+				</figcaption>
 			</figure>
 		</div>
 		<div>
-			
+			<p id ="info-msg"></p>
+			<p>
+				<a href="#" id="price-diff">  </a>
+			</p>
 		</div>
 	</main><!-- /main -->
-	<footer class="flex-container">
-		
+	<footer>
 	</footer><!-- /footer -->
 	<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
 </body>
