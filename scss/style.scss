@@ -5,6 +5,20 @@ $lightestblue: #E5EAEE;
 $textcolor: #aaa;
 
 /*Fonts*/
+$font-fam: 'Nunito', sans-serif;
+$base-font-size: 14px;
+
+/*Flexbox rules*/
+.flex-column {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+     min-height: 100vh;
+}
 
 .flex-row {
 	display: -webkit-box;
@@ -14,12 +28,6 @@ $textcolor: #aaa;
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: row;
 	        flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: space-around;
-        -ms-flex-align: space-around;
-            align-items: space-around;
     figure {
     	-webkit-box-flex: 1;
     	    -ms-flex: 1 0 45%;
@@ -32,16 +40,59 @@ $textcolor: #aaa;
     }
 }
 
+.img-container {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
+    figure {
+		-webkit-box-shadow: 2px 2px 14px 1px rgba(51,47,51,0.68);
+		box-shadow: 2px 2px 14px 1px rgba(51,47,51,0.68);
+		border-radius: 4px;
+		min-width: 300px;
+		figcaption {
+			padding: 0 20px;
+			.right { 
+				-ms-flex-item-align: end;
+				    align-self: flex-end;
+			}
+			p {
+				font-size: ($base-font-size * 1.5);
+			}
+		}
+    }
+}
+
+.flex-1 {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+}
+
+/*Layout Elements*/
 body {
 	background-color: $lightestblue;
+	font-family: $font-fam;
+	font-size: $base-font-size;
+	color: $textcolor;
 }
 
 header {
 	background-color: $darkblue;
     padding: 15px 10%;
     color: #fff;
+    font-size: ($base-font-size * 2);
+    font-weight: 700;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     .logo {
     	max-width: 32px;
+    }
+    span {
+	    padding-left: 10px;
     }
 }
 
@@ -49,4 +100,23 @@ main {
     width: 80%;
     margin: 0 auto;
     padding: 50px 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+
+.blue-text {
+	color: $lightblue;
+	font-size: ($base-font-size * 1.7);
+	font-weight: 700;
+}
+
+p {
+
+}
+
+footer {
+	background-color: $darkblue;
+	height: 40px;
+	margin-top: 0;
 }
