@@ -1,6 +1,10 @@
 var pricesAmsterdam = [1500, 500, 1800, 700];
 var pricesLondon = [2500, 1500, 1000, 900];
 var diff = 0;
+var avgAmsterdam = calcAverage(pricesAmsterdam);
+var avgLondon = calcAverage(pricesLondon);
+var amsterdamData = ["Amsterdam", "Netherlands"];
+var londonData = ["London", "United Kingdom"];
 
 function calcAverage (numArray) {
 	var sum = 0;
@@ -10,22 +14,33 @@ function calcAverage (numArray) {
 	return (sum / numArray.length);
 }
 
-//output average
+//output city data
 document.getElementById("avg-amsterdam").innerHTML =
-"€ " + calcAverage(pricesAmsterdam);
+"€ " + avgAmsterdam;
 document.getElementById("avg-london").innerHTML =
-"€ " + calcAverage(pricesLondon);
+"€ " + avgLondon;
+var cities = document.getElementsByClassName("city");
+//console.log(cities);
+cities[0].innerHTML = amsterdamData[0];
+cities[1].innerHTML = londonData[0];
+var countries = document.getElementsByClassName("country");
+countries[0].innerHTML = amsterdamData[1];
+countries[1].innerHTML = londonData[1];
+
 
 //output info message and price difference
-if (calcAverage(pricesAmsterdam) >= calcAverage(pricesLondon)) {
-	diff = calcAverage(pricesAmsterdam) - calcAverage(pricesLondon);
+if (avgAmsterdam == avgLondon) {
 	document.getElementById("info-msg").innerHTML =
-	"<b>London</b> will be more affordable than <b>Amsterdam</b> for the New Year's celebration.<br><strong>Difference in Price:</strong>";
+	"Both cities have the same average price.";
 	document.getElementById("price-diff").innerHTML = "€ " + diff;
-
-} else {
-	diff = calcAverage(pricesLondon) - calcAverage(pricesAmsterdam);
+} else if (avgAmsterdam > avgLondon) {
+	diff = avgAmsterdam - avgLondon;
 	document.getElementById("info-msg").innerHTML =
-	"<b>Amsterdam</b> will be more affordable than <b>London</b> for the New Year's celebration.<br><strong>Difference in Price:</strong>";
+	"<b>" + londonData[0] + "</b> will be more affordable than <b>" + amsterdamData[0] + "</b> for the New Year's celebration.<br><strong>Difference in Price:</strong>";
+	document.getElementById("price-diff").innerHTML = "€ " + diff;
+} else {
+	diff = avgLondon - avgAmsterdam;
+	document.getElementById("info-msg").innerHTML =
+	"<b>" + amsterdamData[0] + "</b> will be more affordable than <b>" + londonData[0] + "</b> for the New Year's celebration.<br><strong>Difference in Price:</strong>";
 	document.getElementById("price-diff").innerHTML = "€ " + diff;
 }
