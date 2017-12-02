@@ -1,15 +1,15 @@
-var pricesAmsterdam = [1500, 500, 1800, 700];
-var pricesLondon = [2500, 1500, 1000, 900];
-var diff = 0;
-var avgAmsterdam = calcAverage(pricesAmsterdam);
-var avgLondon = calcAverage(pricesLondon);
-var amsterdamData = ["Amsterdam", "Netherlands"];
-var londonData = ["London", "United Kingdom"];
+var pricesAmsterdam = [1500, 500, 1800, 700],
+	pricesLondon = [2500, 1500, 1000, 900],
+	diff = 0,
+	avgAmsterdam = calcAverage(pricesAmsterdam),
+	avgLondon = calcAverage(pricesLondon),
+	amsterdamData = ["Amsterdam", "Netherlands"],
+	londonData = ["London", "United Kingdom"];
 
 function calcAverage (numArray) {
 	var sum = 0;
 	for (var i = 0; i < numArray.length; i++) {
-		sum += numArray[i];
+		sum += Number(numArray[i]);
 	}
 	return (sum / numArray.length);
 }
